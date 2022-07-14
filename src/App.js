@@ -1,25 +1,55 @@
-import logo from './logo.svg';
+import React from 'react'
 import './App.css';
+import FunctionalComp from "./components/FunctionalComp"
+import { ThemeProvider } from "./contexts/ThemeContext";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+export default function App() {
+
+  return (<>
+    <ThemeProvider>
+      <FunctionalComp />
+    </ThemeProvider>
+  </>
   );
 }
 
-export default App;
+
+//import Profile from "./components/Profile"
+{/* <Profile /> */ }
+{/* <button onClick={toggleTheme}>Push Me</button> */ }
+
+
+
+// import { useState } from 'react'
+// import './App.css';
+// import { ThemeContext } from "./contexts/ThemeContext";
+// import ChildComponent from "./components/ChildComponent"
+
+// // import { LoginContext } from "./contexts/LoginContext";
+// // import Login from "./components/Login"
+// // import Profile from "./components/Profile"
+
+
+// function App() {
+//   // const [showProfile, setShowProfile] = useState(false)
+//   // const [username, setUsername] = useState("")
+//   // const [password, setPassword] = useState("")
+//   const [darkTheme, setDarkTheme] = useState(true)
+
+//   function toggleTheme() {
+//     setDarkTheme(prevDarkTheme => !prevDarkTheme)
+//   }
+
+
+//   return (
+//     // <div className="App">
+//     //   <LoginContext.Provider value={{ username, setUsername, setPassword, setShowProfile }}>
+//     //     {showProfile ? <Profile /> : <Login />}
+//     //   </LoginContext.Provider>
+//     // </div>
+//     <ThemeContext.Provider value={darkTheme}>
+//       <button onClick={toggleTheme}>Push Me</button>
+//       <ChildComponent />
+//     </ThemeContext.Provider>
+//   );
+// }
