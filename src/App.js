@@ -1,17 +1,28 @@
 import React from 'react'
 import './App.css';
-import FunctionalComp from "./components/FunctionalComp"
-import { ThemeProvider } from "./contexts/ThemeContext";
+import { AuthProvider } from "./contexts/AuthContext";
+import Main from "./components/Main"
+
 
 export default function App() {
 
   return (<>
-    <ThemeProvider>
-      <FunctionalComp />
-    </ThemeProvider>
+    <AuthProvider>
+      <Main />
+    </AuthProvider>
   </>
   );
 }
+
+
+
+
+
+//     // <div className="App">
+//     //   <LoginContext.Provider value={{ username, setUsername, setPassword, setShowProfile }}>
+//     //     {showProfile ? <Profile /> : <Login />}
+//     //   </LoginContext.Provider>
+//     // </div>
 
 
 //import Profile from "./components/Profile"
@@ -47,6 +58,8 @@ export default function App() {
 //     //     {showProfile ? <Profile /> : <Login />}
 //     //   </LoginContext.Provider>
 //     // </div>
+
+
 //     <ThemeContext.Provider value={darkTheme}>
 //       <button onClick={toggleTheme}>Push Me</button>
 //       <ChildComponent />

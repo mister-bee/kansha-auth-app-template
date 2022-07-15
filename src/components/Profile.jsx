@@ -1,14 +1,17 @@
-import React, { useContext } from 'react'
-// import { LoginContext } from '../contexts/LoginContext'
-import { ThemeContext } from "../contexts/ThemeContext";
+import React from "react";
+import { useAuth, useAuthUpdate } from "../contexts/AuthContext";
 
+export default function Profile() {
+  const { darkTheme, user, logout } = useAuth()
+  const toggleTheme = useAuthUpdate()
 
-function Profile() {
-  const { userName } = useContext(ThemeContext)
   return (<>
-    <h1>----Profile----</h1>
-    <h2>Username: {userName}</h2>
+    <h2>{user?.username} is logged in</h2>
+    <div>
+      <button onClick={logout}>Logout</button>
+    </div>
   </>)
+
+
 }
 
-export default Profile
