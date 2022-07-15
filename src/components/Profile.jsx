@@ -11,7 +11,5 @@ export default function Profile() {
       <button onClick={logout}>Logout</button>
     </div>
   </>)
-
-
 }
 
