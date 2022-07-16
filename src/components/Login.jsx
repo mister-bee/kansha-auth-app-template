@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { useAuth, useAuthUpdate } from "../contexts/AuthContext";
+import { useAuth } from "../contexts/AuthContext";
+import { signInWithGoogle } from "../contexts/Firebase";
 
 export default function Login() {
-  const { darkTheme, user, checkLoginCredentials } = useAuth()
-  const toggleTheme = useAuthUpdate()
+  const { checkLoginCredentials } = useAuth()
   const [username, setUsername] = useState(null)
   const [password, setPassword] = useState(null)
 
@@ -30,6 +30,12 @@ export default function Login() {
 
       <div>
         <button onClick={submitCredentials}>Submit</button>
+      </div>
+
+      <br />
+
+      <div>
+        <button onClick={signInWithGoogle}>Sign in with Google</button>
       </div>
     </div>
   );
