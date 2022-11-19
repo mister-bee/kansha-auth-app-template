@@ -16,6 +16,7 @@ export default function Test() {
 
   return (<>
     <div style={themeStyles}>
+      <h1>Kansha Game</h1>
       {user ? <Profile /> : <Login />}
       <br />
       <br />

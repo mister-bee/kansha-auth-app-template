@@ -1,4 +1,5 @@
 import { initializeApp } from "firebase/app";
+import { getFirestore, collection, getDocs } from "firebase/firestore";
 import { getAuth, GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
 
 const firebaseConfig = {
@@ -44,6 +45,21 @@ export const signOutWithGoogle = () => {
     console.log("Signout error", error)
   });
 }
+
+// init db services
+const db = getFirestore()
+
+// collection ref
+const colRef = collection(db, 'books')
+
+getDocs(colRef).then((snapshot) => {
+  let books = []
+  snapshot.docs.forEach((doc) => {
+    books.push({ ...doc.data() })
+  })
+
+  console.log("books", books)
+})
 
 
     // Sign-out successful.
